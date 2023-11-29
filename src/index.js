@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   console.log("Rota / solicitada");
   res.json({
-    nome: "Analine Almeida e Silva: https://github.com/4n4l1n3",
+    nome: "Analine Almeida e Silva: https://github.com/4n4l1n3, Ayala Clara Silva Miranda: https://github.com/acsm5, Alice Gonçalves Silva: https://github.com/aliicegs, Maria Edurarda Jardim Souza: https://github.com/mejs1, Stefanny Cândida Corsino: https://github.com/stefannycorsiino",
   });
 });
 
