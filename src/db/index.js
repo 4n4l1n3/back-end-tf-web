@@ -76,7 +76,6 @@ async function updateDocumento(data) {
   await client.query(query, documento);
 }
 
-// src/db/index.js
 async function autenticarAdministrador(email_identificador, senha) {
   const client = await connect();
   const query = "SELECT * FROM administrador  WHERE email_identificador  = $1 AND senha = $2";
