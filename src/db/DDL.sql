@@ -18,8 +18,8 @@ rua VARCHAR (50) NOT NULL,
 numero INT (5) NOT NULL,
 estado VARCHAR (25) NOT NULL,
 numero_convenio INT (20) NOT NULL,
-situação_convenio VARCHAR (28),
-data_de_emissao_convenio date NOT NULL
+situação VARCHAR (28),
+data_de_emissao date NOT NULL
 );
 
 CREATE TABLE Administrador (
