@@ -8,9 +8,21 @@ Back-End do trabalho final da disciplina de WEB
 - Maria Eduarda Jardim Souza
 - Stefanny Cândida Corsino
 
-## Modelo Conceitual:
+## Banco de Dados:
 
-<a href="/src/db/modelo conceitual.png"> Clique para acessar o Modelo Conceitual</a>
+<a href="/src/db/modelo conceitual.png"> Clique para acessar o Modelo Conceitual</a> 
+
+<a href="/src/db/modelo lógico.png"> Clique para acessar o Modelo Lógico</a>
+
+<a href="/src/db/DDL.sql"> Clique para acessar o Modelo Físico</a>
+
+### Ferramentas:
+
+- BrModelo: ferramenta desktop voltada para o desenvolvimento de projeto de banco de dados relacionais, incluindo as etapas conceitual, lógico e físico (utilizado para criar o modelo conceitual e o modelo lógico deste trabalho).
+
+- MySQL Workbench: ferramenta visual de design de banco de dados, que integra desenvolvimento, design, criação e manutenção de SQL em um único ambiente de desenvolvimento ( utilizado para criar o modelo físico deste trabalho).
+
+- Neon: Postgres sem servidor desenvolvido para a nuvem, separando computação e armazenamento para oferecer recursos modernos ao desenvolvedor, como escalonamento automático, ramificação, armazenamento sem fundo e muito mais. (utilizado para disponibilizar o bd para uso na API deste trabalho).
 
 ## Documentação:
 
