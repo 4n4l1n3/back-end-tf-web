@@ -174,8 +174,8 @@ Descrição: Atualiza dados de uma empresa.
 
 Body:
 {
-  "id": "id da empresa", br
-  "nome": "nome da empresa", br
+  "id": "id da empresa", 
+  "nome": "nome da empresa", 
   "razao_social": "-------",
   "ramo_de_atividade": "-------",
   "cnpj": "-------",
