@@ -50,12 +50,15 @@ router.delete("/administrador/:id", verificarAutenticacao, async (req, res) => {
 
 router.put("/administrador", verificarAutenticacao, async (req, res) => {
     console.log("Rota PUT /administrador solicitada");
+
     try {
-        const administrador = await selectAdministrador(req.body.id);
-        if (administrador.length > 0) {
-            await updateAdministrador(req.body);
-            res.status(200).json({ message: "Administrador atualizado com sucesso!" });
-        } else res.status(404).json({ message: "Administrador não encontrado!" });
+        if (res.userId == req.body.id) {
+            const administrador = await selectAdministrador(req.body.id);
+            if (administrador.length > 0) {
+                await updateAdministrador(req.body);
+                res.status(200).json({ message: "Administrador atualizado com sucesso!" });
+            } else res.status(404).json({ message: "Administrador não encontrado!" });
+        }else res.status(404).json({ message: "Solicitação não autorizada!" });
     } catch (error) {
         console.log(error);
         res.status(error.status || 500).json({ message: error.message || "Erro!" });

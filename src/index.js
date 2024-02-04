@@ -3,6 +3,7 @@ import express from "express";
 import roteadorAdministrador from "./routes/administrador.js";
 import roteadorDocumento from "./routes/documento.js";
 import roteadorLogin from "./routes/login.js";
+import roteadorEmpresa from "./routes/empresa.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(roteadorAdministrador);
 app.use(roteadorDocumento);
 app.use(roteadorLogin);
+app.use(roteadorEmpresa);
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {

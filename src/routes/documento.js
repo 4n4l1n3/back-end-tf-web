@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { selectDocumentos, selectDocumento, insertDocumento, deleteDocumento, updateDocumento } from "../db/index.js";
+import verificarAutenticacao from "../middlewares/autenticacao.js";
 
 const router = Router();
 
@@ -24,7 +25,7 @@ router.get("/documento/:id", async (req, res) => {
     }
 });
 
-router.post("/documento", async (req, res) => {
+router.post("/documento",verificarAutenticacao, async (req, res) => {
     console.log("Rota POST /documento solicitada");
     try {
         await insertDocumento(req.body);
@@ -34,7 +35,7 @@ router.post("/documento", async (req, res) => {
     }
 });
 
-router.delete("/documento/:id", async (req, res) => {
+router.delete("/documento/:id",verificarAutenticacao, async (req, res) => {
     console.log("Rota DELETE /documento solicitada");
     try {
         const documento = await selectDocumento(req.params.id);
@@ -47,7 +48,7 @@ router.delete("/documento/:id", async (req, res) => {
     }
 });
 
-router.put("/documento", async (req, res) => {
+router.put("/documento",verificarAutenticacao, async (req, res) => {
     console.log("Rota PUT /documento solicitada");
     try {
         const documento = await selectDocumento(req.body.id);
