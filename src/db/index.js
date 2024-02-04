@@ -113,7 +113,7 @@ async function deleteEmpresa(id) {
 
 async function updateEmpresa(data) {
   const client = await connect();
-  const query = "UPDATE empresa SET nome = $1, razao_social = $2, ramo_de_atividade = $3, cnpj = $4, representante_legal = $5, cargo_representante = $6, telefone = $7, email = $8, cidade = $9, bairro = $10, rua = $11, numero = $12, estado = $13, numero_convenio = $14, situacao_convenio = $15, data_de_emissao_convenio = $16 WHERE id = $3";
+  const query = "UPDATE empresa SET nome = $1, razao_social = $2, ramo_de_atividade = $3, cnpj = $4, representante_legal = $5, cargo_representante = $6, telefone = $7, email = $8, cidade = $9, bairro = $10, rua = $11, numero = $12, estado = $13, numero_convenio = $14, situacao_convenio = $15, data_de_emissao_convenio = $16 WHERE id = $17";
   const empresa = [data.nome, data.razao_social, data.ramo_de_atividade, data.cnpj, data.representante_legal, data.cargo_representante, data.telefone, data.email, data.cidade, data.bairro, data.rua, data.numero, data.estado, data.numero_convenio, data.situacao_convenio, data.data_de_emissao_convenio, data.id];
   await client.query(query, empresa);
 }

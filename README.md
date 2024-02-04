@@ -30,92 +30,165 @@ Projeto idealizado com objetivo de facilitar o acesso a documentação necessár
 
 <hr/>
 
-### Cadastrar novo administrador
+### URL API: https://back-end-tf-web-nine.vercel.app
 
-- Descrição: Insere um novo administrador ao banco de dados
-- Endpoint: https://back-end-tf-web-nine.vercel.app/administrador/
-- Tipo da requisição: POST
-- Body: 
-    {
-        "Usuario": "Nome do usuario",
-        "email_identificador": "email.usuario@ifnmg.edu.br",
-        "senha": "********"
-    }
-- Header: x-access-token
+### [POST] /login
 
-### Listar todos os administradores 
+Descrição: Autentica usuário e gera token de acesso.
 
-- Descrição: Lista todos os administradores cadastrados no banco de dados, bem como suas respectivas informações.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/administradores
-- Tipo da requisição: GET
+Observações: É necessário que o usuário esteja cadastrado.
 
-### Listar apenas um administrador 
+Body:
+{
+  "email_identificador": "email-usuario@email.com",
+  "senha": "********"
+}
 
-- Descrição: Lista apenas um dentre todos os administradores cadastrados no banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/administrador/1
-- Tipo da requisição: GET
+### [GET] /administradores
 
-### Alterar as informações de um administrador identificado 
+Descrição: Retorna todos os administradores.
 
-- Descrição: Modifica as informações referentes a um administrador já cadastrado no banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/administrador/
-- Tipo da requisição: PUT
-- Body:
-    {
-        "id": "id do usuario",
-        "usuario": "Nome do usuario",
-        "senha": "********",
-        "email_identificador": "email.usuario@ifnmg.edu.br"
-    }
-- Header: x-access-token
+### [GET] /administrador/{id}
 
-### Excluir as informações de um administrador identificado
+Descrição: Retorna um único administrador.
 
-- Descrição: Deleta as informações referentes a um administrador já cadastrado no banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/administrador/
-- Tipo da requisição: DELETE
-- Header: x-access-token
+### [POST] /administrador
+
+Descrição: Cadastra um novo administrador.
+
+Body:
+{
+  "usuario": "Nome do usuário",
+  "email_identificador": "email-usuario@email.com",
+  "senha":"********"
+}
+
+Observações: É necessário token de acesso via header (x-access-token)
+
+### [DELETE] /administrador/{id}
+
+Descrição: Exclui um único administrador.
+
+Observações: É necessário token de acesso via header (x-access-token)
+
+### [PUT] /administrador
+
+Descrição: Atualiza dados de um administrador.
+
+Body:
+{
+  "id": "id do administrador",
+  "usuario": "Nome do usuário",
+  "email_identificador": "email-usuario@email.com",
+  "senha":"********"
+}
+
+Observações: É necessário token de acesso via header (x-access-token)
 
 <hr/>
 
-### Inserir novo documento
+### [GET] /documentos
 
-- Descrição: Adiciona um novo documento ao banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/documento/
-- Tipo da requisição: POST
-- Body:
-    {
-        "nome": "Nome do documento",
-        "descricao": "*****************************"
-    }
+Descrição: Retorna todos os documentos.
 
-### Listar todos os documentos 
+### [GET] /documento/{id}
 
-- Descrição: Lista todos os documentos salvos no banco de dados, bem como suas respectivas informações.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/documentos
-- Tipo da requisição: GET
+Descrição: Retorna um único documento.
 
+### [POST] /documento
 
-### Listar apenas um documento
+Descrição: Cadastra um novo documento.
 
-- Descrição: Lista apenas um dentre todos os documentos inseridos no banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/documento/1
-- Tipo da requisição: GET
+Body:
+{
+  "nome": "Nome do documento",
+  "descricao": "------------"
+}
 
-### Alterar as informações de um documento 
+Observações: É necessário token de acesso via header (x-access-token)
 
-- Descrição: Modifica as informações de um documento já inserido no banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/documento/
-- Tipo da requisição: PUT
-- Body:
-    {
-        "id":"id do documento",
-        "nome":"Nome do documento",
-        "descricao":"Escreva a descrição do documento"
-    }
+### [DELETE] /documento/{id}
 
-### Excluir as informações de um documento
+Descrição: Exclui um único documento.
 
-- Descrição: Deleta as informações de um documento já inserido no banco de dados.
-- Endpoint: https://back-end-tf-web-nine.vercel.app/documento/
-- Tipo da requisição: DELETE
+Observações: É necessário token de acesso via header (x-access-token)
+
+### [PUT] /documento
+
+Descrição: Atualiza dados de um documento.
+
+Body:
+{
+  "id": "id do documento",
+  "nome": "Nome do documento",
+  "descricao": "-----------"
+}
+
+Observações: É necessário token de acesso via header (x-access-token)
+
+<hr/>
+
+### [GET] /empresas
+
+Descrição: Retorna todas as empresas.
+
+### [GET] /emresa/{id}
+
+Descrição: Retorna uma única empresa.
+
+### [POST] /empresa
+
+Descrição: Cadastra uma nova empresa.
+
+Body:
+{
+  "nome": "nome da empresa",
+  "razao_social": "-------",
+  "ramo_de_atividade": "-------",
+  "cnpj": "-------",
+  "representante_legal": "-------",
+  "cargo_representante": "-------",
+  "telefone": "-------",
+  "email": "email-empresa@email.com",
+  "cidade": "-------",
+  "bairro": "-------",
+  "rua": "-------",
+  "numero": "00",
+  "estado": "-------",
+  "numero_convenio": 0,
+  "situacao_convenio": "-------",
+  "data_de_emissao_convenio": "0000-00-00"
+}
+
+Observações: É necessário token de acesso via header (x-access-token)
+
+### [DELETE] /empresa/{id}
+
+Descrição: Exclui uma única empresa.
+
+Observações: É necessário token de acesso via header (x-access-token)
+
+### [PUT] /documento
+
+Descrição: Atualiza dados de uma empresa.
+
+Body:
+{
+  "id": "id da empresa",
+  "nome": "nome da empresa",
+  "razao_social": "-------",
+  "ramo_de_atividade": "-------",
+  "cnpj": "-------",
+  "representante_legal": "-------",
+  "cargo_representante": "-------",
+  "telefone": "-------",
+  "email": "email-empresa@email.com",
+  "cidade": "-------",
+  "bairro": "-------",
+  "rua": "-------",
+  "numero": "00",
+  "estado": "-------",
+  "numero_convenio": 0,
+  "situacao_convenio": "-------",
+  "data_de_emissao_convenio": "0000-00-00"
+}
